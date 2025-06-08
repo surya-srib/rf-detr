@@ -70,7 +70,7 @@ class Backbone(BackboneBase):
         scale_factors = [level2scalefactor[lvl] for lvl in self.projector_scale]
 
         self.projector = MultiScaleProjector(
-            in_channels=in_channels if isinstance(in_channels, int) else in_channels[0],
+            in_channels=[in_channels] if isinstance(in_channels, int) else in_channels[0],
             out_channels=out_channels,
             scale_factors=scale_factors,
             layer_norm=layer_norm,
