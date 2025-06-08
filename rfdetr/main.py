@@ -477,7 +477,7 @@ class Model:
         """Export the trained model to ONNX format"""
         print(f"Exporting model to ONNX format")
         try:
-            from rfdetr.deploy.export import export_onnx, onnx_simplify, make_infer_image
+            from deploy.export import export_onnx, onnx_simplify, make_infer_image
         except ImportError:
             print("It seems some dependencies for ONNX export are missing. Please run `pip install rfdetr[onnxexport]` and try again.")
             raise
