@@ -36,15 +36,15 @@ import torch
 from peft import LoraConfig, get_peft_model
 from torch.utils.data import DataLoader, DistributedSampler
 
-import rfdetr.util.misc as utils
-from rfdetr.datasets import build_dataset, get_coco_api_from_dataset
-from rfdetr.engine import evaluate, train_one_epoch
-from rfdetr.models import build_model, build_criterion_and_postprocessors
-from rfdetr.util.benchmark import benchmark
-from rfdetr.util.drop_scheduler import drop_scheduler
-from rfdetr.util.files import download_file
-from rfdetr.util.get_param_dicts import get_param_dict
-from rfdetr.util.utils import ModelEma, BestMetricHolder, clean_state_dict
+import util.misc as utils
+from datasets import build_dataset, get_coco_api_from_dataset
+from engine import evaluate, train_one_epoch
+from models import build_model, build_criterion_and_postprocessors
+from util.benchmark import benchmark
+from util.drop_scheduler import drop_scheduler
+from util.files import download_file
+from util.get_param_dicts import get_param_dict
+from util.utils import ModelEma, BestMetricHolder, clean_state_dict
 
 if str(os.environ.get("USE_FILE_SYSTEM_SHARING", "False")).lower() in ["true", "1"]:
     import torch.multiprocessing
